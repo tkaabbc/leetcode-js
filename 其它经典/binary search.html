@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function bsearch(a, n, val) {
+        var low = 0;
+        var high = n - 1;
+
+        while (low <= high) {
+            var mid = Math.floor((low + high) / 2);
+            if (a[mid] == val) {
+                return mid;
+            } else if (a[mid] < val) {
+                low = mid + 1;
+            } else {
+                high = mid -1;
+            }
+        }
+        return -1;
+    }
+    console.log(bsearch([1,2,3,4,5,6],6,7));
+    
+    function bsearch2(a, low, high, val) {
+        if (low > high) return -1;
+        var mid = Math.floor((low + high) / 2);
+        if (a[mid] == val) {
+            return mid;
+        } else if (a[mid] < val) {
+            bsearch2(a, mid+1, high, val)
+        } else {
+            bsearch2(a, low, mid-1, val)
+        }
+    }
+    console.log(bsearch2([1,2,3,4,5,6],0,6,5));
+    
+</script>
+</html>
