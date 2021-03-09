@@ -7,6 +7,7 @@
  * 其余的实现与细节都相同
  * （递归的时候是把函数推入js函数调用栈中，
  * 迭代的时候就是手动声明一个数组当作栈了）
+ * 在 JavaScript 中，调用函数时，都会发生压栈行为，遇到含 return 关键字的句子或执行结束后，才会发生出栈（pop）。
  * 参考https://github.com/sl1673495/leetcode-javascript/issues/50
  * @param {*} params 
  */
