@@ -80,6 +80,8 @@
       }
     }
   }
+  let [beginY, beginx] = beginLocation
+  visited[beginY][beginx]
   helper([beginLocation])
   console.log('allStepsLen', allStepsLen);
 
