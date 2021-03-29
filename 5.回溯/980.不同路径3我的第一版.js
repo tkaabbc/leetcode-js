@@ -1,4 +1,11 @@
 /**
+ * 思路：
+ * 1.常规套路，每一步除了原路都有3个方向可以走；回溯找出所有能到终点的路径即可
+ * 2.注意多个for能并为一个；技巧：4个方向可以抽象为一个dirs数组
+ * 前期草稿纸上确定以下几点：
+ * 1.递归终止条件：
+ * 2.满足什么条件才进行下一步helper：
+ * 3.每一次面临的情况有哪些（4个方向走）
  * @param {number[][]} grid
  * @return {number}
  */
@@ -139,4 +146,3 @@ function findAllStepLen(grid) {
 const ipt = [[1,0,0,0],[0,0,0,0],[0,0,0,2]]
 const answer = uniquePathsIII(ipt)
 console.log(answer);
-
