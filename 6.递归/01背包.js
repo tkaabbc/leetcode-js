@@ -15,8 +15,8 @@ function maxCarry(i, cw, wArray, n, W) {
     if (cw > maxW) maxW = cw
   }
 
-  maxCarry(i, cw, n, W)
+  maxCarry(i, cw, wArray, n, W)
   if (cw + wArray[i] <= W) {
-    maxCarry(i, cw + wArray[i], n, W)
+    maxCarry(i, cw + wArray[i], wArray, n, W)
   }
 }
