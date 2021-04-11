@@ -1,4 +1,19 @@
 /**
+ * 思路：
+ * 1.这题关键要知道[i][j]只能从增、删、替换这几种操作得来
+ * 并且 增 删 替换 这几种怎么表示
+ * 并且注意：当增加或删除某个字符之后，另一个字符还是要当作匹配对象继续进行下一次的匹配的。
+ *  只有替换之后，[i][j]两个都变一样了，才能接着考察[i+1][j+1]
+ *  否则删除和增加都是[i][j+1]或[i+1][j]
+ * 
+ * 2.还有要知道所谓的这些操作并不是真的去修改word1和word2；
+ * 只是在dp数组中记下来‘我这一步要怎么操作才会变得一样’
+ * 并不需要真的去改变word1和2,所以word的长度是不会变的!
+ * 
+ * 知道这些就能写出状态转移方程了
+ * 
+ * 参考https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484484&idx=1&sn=74594297022c84952162a68b7f739133&chksm=9bd7fa4caca0735a1364dd13901311ecd6ec4913c8db05a1ff6cae8f069627eebe8d651bbeb1&scene=21#wechat_redirect
+
  * @param {string} word1
  * @param {string} word2
  * @return {number}
@@ -49,7 +64,7 @@ function genTable(y, x) {
 
 console.log(minDistance('abc', 'cba'));
 
-// 以下是常规的生成dp方法，稍稍多了几个判断
+// 以下是常规的生成dp方法，稍稍多了几个判断；参考王争42节
 
 // dp[i][j] 表示word[i]和word[j]左边字符串的最小编辑距离（包含ij）
 
