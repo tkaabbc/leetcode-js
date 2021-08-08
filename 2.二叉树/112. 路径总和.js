@@ -32,6 +32,9 @@ var tree = {
  *     this.left = (left===undefined ? null : left)
  *     this.right = (right===undefined ? null : right)
  * }
+ * 
+ * 感悟：前序遍历就是用深度优先搜索实现的 dfs(left) || dfs(right)
+ * 这题用深度优先搜索就行了
  */
 /**
  * @param {TreeNode} root
