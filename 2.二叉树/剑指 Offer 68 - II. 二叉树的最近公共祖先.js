@@ -97,6 +97,10 @@ var lowestCommonAncestor = function(root, p, q) {
 // 所以最终总结下：我这里的思路是
 // 1.dfs查找p和q的同时，记录p和q的path
 // 2.找到pPath和qPath后再for循环一一比较每个node的值，找出最后一个共同的就是最近公共祖先了。
+
+// 拓展
+// 若题目问的是树的最近公共祖先，则可能是二叉搜索树、二叉树、普通树、有指向父节点的树
+// 每种都有特定的简便解法，可与面试官沟通确认，参考剑指offer
 var lowestCommonAncestor = function(root, p, q) {
   let answer = ''
   let pPath 
