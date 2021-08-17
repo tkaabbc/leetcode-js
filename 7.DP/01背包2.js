@@ -11,7 +11,7 @@ function knapsack(weight, value, MAX_BAG_CAPACITY) {
     memo[i][0] = 0;
   }
   for (let j = 0; j <= MAX_BAG_CAPACITY; j++) {
-    memo[0][j] = j > weight[0] ? value[0] : 0;
+    memo[0][j] = j >= weight[0] ? value[0] : 0;
   }
 
   for (let i = 1; i < NUM; i++) {

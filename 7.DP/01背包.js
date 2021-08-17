@@ -26,7 +26,7 @@ function knapsack(weight, value, n, w) {
         // 如果放入该物品之后，与另外重量相同的方案对比，若价值更高，那就放入（states[i-1][j] + value[i] > states[i][j + weight[i]]）
         // 并且较低的方案就被舍弃
         let v1 = states[i-1][j] + value[i] // 这里用i-1而不用i能避免重复计算，因为states[i]在下面v2=v1之后会变化
-        let v2 = states[i][j + weight[i]]
+        let v2 = states[i][j + weight[i]] // todo dp方程怎么推倒出这两行的？，有点绕
         if (v1 > v2) {
           v2 = v1
         }
@@ -61,8 +61,8 @@ const n = weight.length
 const w = 6
 /**
  * 纵坐标表示考察第几个物品
- * 表格里的数字表示第i个物品，横坐标重量下能装的最大价值
- * 横坐标表示重量0  1  2  3  4  5  6
+ * 表格里的数字表示：第i个物品，横坐标容量下能装的最大价值
+ * 横坐标表示容量0  1  2  3  4  5  6
   重量 价值  [ 
   w=2  v=1  [ 0, -1, 1, -1, -1, -1, -1 ],
   w=2  v=4  [ 0, -1, 4, -1, 5, -1, -1 ],
@@ -72,3 +72,13 @@ const w = 6
           ]
  */
 console.log(knapsack(weight, value, n, w));
+
+/**
+ * 思路
+ * 暴力法：
+ * 每个都有两个选择，放or不放，递归下去
+ * 
+ * dp法：
+ * 精髓是dp方程
+ * states[i][v] = max(state[i - 1][v], state[i - 1, v - Ci] + Wi)
+ */
