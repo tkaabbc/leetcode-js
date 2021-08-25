@@ -1,5 +1,5 @@
 /**
- * todo
+ * 参考https://segmentfault.com/a/1190000012829866
  * @param {number[]} weight 物品重量
  * @param {number[]} value 物品价值
  * @param {number} MAX_BAG_CAPACITY 背包最大承重
