@@ -26,7 +26,7 @@ function knapsack(weight, value, MAX_BAG_CAPACITY) {
   }
   console.log(memo);
 
-  return memo[NUM-1][j]
+  return memo[NUM-1][MAX_BAG_CAPACITY]
 }
 
 function genTable(y, x) {
@@ -49,8 +49,8 @@ const w = 6
  * 表格里的数字表示第i个物品，横坐标重量下能装的最大价值
  * 横坐标表示重量0  1  2  3  4  5  6
   重量 价值  [ 
-  w=2  v=1  [ 0, 0, 0, 1, 1, 1, 1 ],
-  w=2  v=4  [ 0, 0, 4, 4, 4, 5, 5 ],
+  w=2  v=1  [ 0, 0, 1, 1, 1, 1, 1 ],
+  w=2  v=4  [ 0, 0, 4, 4, 5, 5, 5 ],
   w=4  v=5  [ 0, 0, 4, 4, 5, 5, 9 ],
   w=6  v=4  [ 0, 0, 4, 4, 5, 5, 9 ],
   w=3  v=3  [ 0, 0, 4, 4, 5, 7, 9 ]
