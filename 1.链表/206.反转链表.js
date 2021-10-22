@@ -3,10 +3,10 @@
 // 现在想想，这句话简直是真理啊！
 
 // 好理解的双指针
-// 定义两个指针： prepre 和 curcur ；prepre 在前 curcur 在后。
-// 每次让 prepre 的 nextnext 指向 curcur ，实现一次局部反转
-// 局部反转完成之后，prepre 和 curcur 同时往前移动一个位置
-// 循环上述过程，直至 prepre 到达链表尾部
+// 定义两个指针： cur 和 prev ；cur 在前 prev 在后。
+// 每次让 cur 的 next 指向 prev ，实现一次局部反转
+// 局部反转完成之后，cur 和 prev 同时往前移动一个位置
+// 循环上述过程，直至 cur 到达链表尾部
 // 动画参考：https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-shuang-zhi-zhen-di-gui-yao-mo-/
 // 从动画可以总结出：代码中能拿操作的就是指针，要利用好指针来做文章
 
