@@ -24,7 +24,7 @@ function knapsack(weights, values, W){
        */
       for(var j = W; j >= weights[i]; j--){  
         console.log('当前最大承重j：', j, '当前物品编号i：', i) //调试
-        memo[j] = Math.max(memo[j], memo[j-weights[i]] +values[i]);
+        memo[j] = Math.max(memo[j], memo[j-weights[i]] + values[i]);
         console.log(memo) //调试
       }
       console.log(`==前${i+1}个物品，背包容量为f数组下标时，可装的物品的价值==`) //调试
