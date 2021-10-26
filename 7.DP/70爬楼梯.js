@@ -23,3 +23,21 @@ var climbStairs = function (n) {
   helper(n)
   return result
 };
+
+
+/**
+ * dp法
+ * 爬i级楼梯的方法数 = 最后爬两级的方法数 + 最后爬一级的方法数
+ * @param {*} n 
+ * @returns 
+ */
+var climbStairs = function (n) {
+  const dp = []
+  dp[0] = 1
+  dp[1] = 1
+  for (let i = 2; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i -2 ]
+  }
+  
+  return dp[n]
+};
