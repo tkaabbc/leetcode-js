@@ -12,6 +12,7 @@ function bubbleSort(arr) {
     for (let j = 0; j < arr.length - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1)
+        flag = true
       }
     }
     // 如果这次循环都没有数字被交换 说明已经是排序好的数组

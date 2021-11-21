@@ -1,4 +1,4 @@
-//https://leetcode-cn.com/problems/binary-tree-paths/
+//https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
 var tree = {
   val: '3',
   left: {

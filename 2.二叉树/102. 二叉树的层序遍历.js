@@ -1,4 +1,6 @@
 /**
+ * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+ * 
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
  *     this.val = (val===undefined ? 0 : val)
@@ -29,7 +31,7 @@ var levelOrder = function(root) {
 
   while(queue.length) {
       const [p, level] = queue.shift();
-      if (!res[level]) {
+      if (res[level]) {
           res[level].push(p.val)
       } else {
           res[level] = []

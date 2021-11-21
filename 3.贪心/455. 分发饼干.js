@@ -7,7 +7,19 @@
  * @param {number[]} g
  * @param {number[]} s
  * @return {number}
+ * 
+ * 这个解法好像有点问题 todo
  */
 var findContentChildren = function(g, s) {
-
+  var g = g.sort()
+  var s = s.sort()
+  let maxNum = 0
+  for (let i = 0; i < g.length; i++) {
+    for (let j = maxNum; j < s.length; j++) {
+      if (s[j] >= g[i]) {
+        maxNum++
+        break
+      }
+    }
+  }
 };
