@@ -32,7 +32,7 @@ var rob = function(nums) {
  * 因为前i个的最大值和前i-1个的最大值有关，所以可以用动态规划
  * 
  * dp方程：前i家的最大值 = 抢当前家时的最大值 + 不抢当前家时的最大值
- * dp[i]：Math.max(dp[i - 1], dp[i - 2] + nums[i - 1])
+ * dp[i]：Math.max(dp[i - 1], dp[i - 2] + nums[i])
  * 记住就好了，见多了就好了
  * 
  * @param {*} nums 
@@ -50,10 +50,10 @@ var rob = function(nums) {
   dp[1] = nums[0];
   for (let i = 2; i <= len; i++) {
     dp[i] = Math.max(
-      // 不抢当前家，去下家抢
+      // 不抢当前家
       dp[i - 1],
-      // 抢当前家，然后去下下家抢
-      dp[i - 2] + nums[i - 1]
+      // 抢当前家
+      dp[i - 2] + nums[i]
     );
   }
   return dp[len];
