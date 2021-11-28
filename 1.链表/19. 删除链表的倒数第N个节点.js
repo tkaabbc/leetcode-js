@@ -1,3 +1,4 @@
+/** 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。 */
 // 方法
 // 1遍历一次算出链表长，再遍历一次把第n个删除
 // 2快慢指针
@@ -38,7 +39,7 @@ var removeNthFromEnd = function(head, n) {
       quick = quick.next;
   }
 
-  // 删除最后一个则直接为null
+  // 删除最后一个则直接为null 注意这里边界情况
   if(n==1)
       slow.next = null;
   else{
