@@ -76,3 +76,30 @@ s 仅由括号 '()[]{}' 组成
 
 // @lc code=end
 
+/**
+ * 我的版本
+ */
+function isValid(str = '') {
+  const stack = []
+  const kuohaoMap = new Map([
+    ['(', ')'],
+    ['{', '}'],
+    ['[', ']'],
+  ])
+  const leftKuohao = ['(', '{', '[']
+  const rightKuohao = [')', '}', ']']
+  for (let i = 0; i < str.length; i++) {
+    const ele = str[i];
+    if (leftKuohao.includes(ele)) {
+      stack.push(ele)
+    } else if (rightKuohao.includes(ele)) {
+      const item = stack.pop()
+      if (kuohaoMap.get(item) === ele) {
+        continue
+      } else {
+        return false
+      }
+    }
+  }
+  return stack.length === 0
+}
