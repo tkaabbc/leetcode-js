@@ -42,12 +42,7 @@ function permute(nums) {
       helper(rest, [...prev, use])
     }
   }
-  for (let i = 0; i < nums.length; i++) {
-    const use = nums[i]
-    const prev = [use]
-    const rest = nums.slice(0, i).concat(nums.slice(i + 1, n))
-    helper(rest, prev)
-  }
+  helper(nums, [])
   return res
 }
 const ipt = [1,2,3]

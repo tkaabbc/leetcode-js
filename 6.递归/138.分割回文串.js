@@ -29,6 +29,13 @@
   return ret
 }
 
+/**
+ * 判断是否为回文串
+ * 思路
+ * 头尾双指针往中间移动对比
+ * @param {*} s 
+ * @returns 
+ */
 function isPalindrome(s) {
   if (!s) {
     return false

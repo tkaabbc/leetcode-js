@@ -51,9 +51,9 @@ var hasPathSum = function(root, targetSum) {
       if (!root.left && !root.right && Number(root.val) + sum === targetSum) {
         return true
       } else {
-          return dfs(root.left, Number(root.val) + sum) || dfs(root.right, Number(root.val) + sum)
+        return dfs(root.left, Number(root.val) + sum) || dfs(root.right, Number(root.val) + sum)
       }
-    }
+    } 
     return dfs(root, 0)
 };
 
