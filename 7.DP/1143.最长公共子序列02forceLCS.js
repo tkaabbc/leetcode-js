@@ -116,3 +116,44 @@ console.log(longestCommonSubsequence('abcde', 'ace'));
 
 // todo dp
 // dp难理解为什么 先跳过
+/**
+ *
+  dp方程思路
+  dp[i][j]：text1 到包含索引 i 为止，text2 到包含索引 j 为止，最长
+    公共子序列的长度
+    
+  if (text1[i] === text2[j]) {
+    dp[i][j] = dp[i-1][j-1] + 1;
+  } else {
+    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+  }
+  
+  处理一下边界情况：在二维数组左边和上边加一列 0，因为会用到
+    dp[-1][j] / dp[i][-1] / dp[-1][-1]
+ */
+/**
+ * @param {string} text1
+ * @param {string} text2
+ * @return {number}
+ */
+
+var longestCommonSubsequence = function(text1, text2) {
+  let len1 = text1.length;
+  let len2 = text2.length;
+  const dp = new Array(len1).fill(0).map(_ => new Array(len2).fill(0));
+  dp[-1] = JSON.parse( JSON.stringify(dp[0]) );
+  for (let i = 0; i < len1; i++) {
+    dp[i][-1] = 0;
+  }
+  dp[-1][-1] = 0;
+  for (let i = 0; i < len1; i++) {
+    for (let j = 0; j < len2; j++) {
+      if (text1[i] === text2[j]) {
+        dp[i][j] = dp[i-1][j-1] + 1;
+      } else {
+        dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+      }
+    }
+  }
+  return dp[len1-1][len2-1];
+};
